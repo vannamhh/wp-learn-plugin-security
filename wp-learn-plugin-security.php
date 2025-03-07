@@ -134,7 +134,7 @@ function wp_learn_maybe_process_form()
     return;
   }
 
-  if ( wp_verify_nonce($_POST['wp_learn_form_nonce_field'], 'wp_learn_form_nonce_action')) {
+  if ( !wp_verify_nonce($_POST['wp_learn_form_nonce_field'], 'wp_learn_form_nonce_action')) {
     wp_redirect( WP_LEARN_ERROR_PAGE_SLUG );
     die();
   }
